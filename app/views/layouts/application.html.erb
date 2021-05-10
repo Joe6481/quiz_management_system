@@ -10,6 +10,28 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="header">
+      <h1>WebbiSkools Ltd. Quiz Management Site</h1>
+    </div>
+    
+    <div class="topnav">
+      <%= link_to "Home", quizzes_path %>
+      
+      <%= link_to "Create A New Quiz", new_quiz_path %>
+    </div>
+       
+    <div class="content">
+      <p id="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <p>Symbols for buttons:</p>
+      <p>Pencil &#x270E;</p>
+      <p>Cross &#x2716;</p>
+      <p>Show ? &#x2630;</p>
+    </div>
   </body>
 </html>
