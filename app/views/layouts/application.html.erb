@@ -13,11 +13,13 @@
     <div class="header">
       <h1>WebbiSkools Quiz Management</h1>
     </div>
-    
+          
     <div class="topnav">
-      <%= link_to "Home", quizzes_path %>
-      
-      <%= link_to "Create A New Quiz", new_quiz_path %>
+      <% if user_signed_in? %>
+        <%= link_to "Home", quizzes_path %>
+      <% else %>
+        <a href="#"></a> <!-- Provides a blank navbar -->
+      <% end %>
     </div>
        
     <div class="content">

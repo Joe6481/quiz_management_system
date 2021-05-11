@@ -9,18 +9,18 @@ class QuizPolicy < ApplicationPolicy
   end
 
   def edit?
-    true
+    user.present?
   end
 
   def create?
-    true
+    user.present?
   end
 
   def update?
-    true
+    user.present?
   end
 
   def destroy?
-    true
+    user.present?
   end
 end
