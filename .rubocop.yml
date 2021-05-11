@@ -1,0 +1,150 @@
+---
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.7.2
+  DisplayCopNames: true
+  NewCops: enable
+  Exclude:
+  - vendor/**/*
+  - bin/*
+  - node_modules/**/*
+  - tmp/**/*
+  - node_modules/**/*
+  - config/spring.rb
+  - config/initializers/devise.rb
+  - config/initializers/simple_form.rb
+  - config/initializers/simple_form_bootstrap.rb
+  - db/schema.rb
+  - db/oracle_schema.rb
+  - lib/tasks/cucumber.rake
+  - script/cucumber
+  - spec/rails_helper.rb
+  - spec/spec_helper.rb
+  - spec/mailers/application_mailer_spec.rb
+  - spec/jobs/application_job_spec.rb
+  - script/data_migrations/*
+
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+Layout/FirstArgumentIndentation:
+  Exclude:
+    - app/components/**/*
+Layout/FirstHashElementIndentation:
+  Exclude:
+    - app/views/**/*
+    - app/components/**/*
+Layout/LineLength:
+  Max: 120
+  Exclude:
+  - Gemfile
+  - config/puma.rb
+Layout/MultilineArrayBraceLayout:
+  Enabled: false
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: false
+Layout/SpaceInsideBlockBraces:
+  SpaceBeforeBlockParameters: false
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+
+Metrics/AbcSize:
+  Exclude:
+  - db/migrate/*
+  - lib/tasks/*
+Metrics/BlockLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 10
+Metrics/MethodLength:
+  Max: 8
+  Exclude:
+  - db/migrate/*
+  - lib/tasks/*
+Metrics/ClassLength:
+  Exclude:
+  - db/migrate/*
+  - app/models/telefonica_fault.rb
+
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+Naming/PredicateName:
+  ForbiddenPrefixes:
+  - is_
+Naming/VariableNumber:
+  Enabled: false
+
+
+Rails:
+  Enabled: true
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+Rails/BulkChangeTable:
+  Enabled: false
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+  Exclude:
+  - db/migrate/2019*
+  - db/migrate/202001*
+  - db/migrate/202002*
+  - db/migrate/202003*
+  - db/migrate/202004*
+  - db/migrate/202006*
+Rails/FilePath:
+  Enabled: false
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/HelperInstanceVariable:
+  Enabled: false
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+  - app/controllers/duty_managers/report_sections_controller.rb
+Rails/NegateInclude:
+  Enabled: true
+  Exclude:
+  - config/puma.rb
+Rails/PluckId:
+  Enabled: true
+Rails/RakeEnvironment:
+  Enabled: false
+Rails/UnknownEnv:
+  Environments: development, test, edge, showcase, production
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+  - app/models/*
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  Exclude:
+  - factories/**/*
+Style/Documentation:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
+Style/FormatStringToken:
+  Enabled: false
+Style/HashSyntax:
+  Exclude:
+  - lib/tasks/*
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+Style/NestedParenthesizedCalls:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/SymbolArray:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
