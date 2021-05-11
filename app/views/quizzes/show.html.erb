@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Edit Quiz', edit_quiz_path(@quiz), class: "button edit small" %> 
+<h2><%= @quiz.title %></h2>
+<h3><%= "Description: #{@quiz.description}" %></h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @quiz.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @quiz.description %>
-</p>
-
-<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
-<%= link_to 'Back', quizzes_path %>
+<ol>
+  <% @quiz.questions.each do |question| %>
+    <li><%= question.content %>
+      <ol class="alphabet">
+        <% question.answers.each do |answer| %>
+            <li><%= answer.option %></li>
+        <% end %>  
+      </ol>
+    </li>
+    <br>
+  <% end %>
+</ol>

@@ -1,27 +1,25 @@
-<%= form_with(model: quiz, local: true) do |form| %>
+<%= simple_form_for @quiz do |f| %>
   <% if quiz.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+    <% quiz.errors.full_messages.each do |message|%>
+      <p class="text_danger"><%= "Error: #{message}" %> </p>
+    <%end%>
+  <%end%>
 
-      <ul>
-        <% quiz.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <strong>
+    <%= f.input :title, label: "Title" %>
+    <%= f.input :description, label: "Description" %>
+  </strong>
+
+  <% q_no = 0 %> <!-- Defines a variable used to number questions. Used in question fields partial -->
+
+  <br>
+  <%= f.simple_fields_for :questions do |q| %>
+    <% q_no += 1 %>
+    <%= render 'question_fields', f: q, q_no: q_no %>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.submit class: "button submit" %>
+  
 <% end %>
+
+<br>
