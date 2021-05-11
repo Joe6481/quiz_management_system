@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: %i[ show edit update destroy ]
+  before_action :set_quiz, only: %i[show edit update destroy]
 
   # GET /quizzes or /quizzes.json
   def index
@@ -7,8 +9,7 @@ class QuizzesController < ApplicationController
   end
 
   # GET /quizzes/1 or /quizzes/1.json
-  def show
-  end
+  def show; end
 
   # GET /quizzes/new
   def new
@@ -16,8 +17,7 @@ class QuizzesController < ApplicationController
   end
 
   # GET /quizzes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /quizzes or /quizzes.json
   def create
@@ -25,7 +25,7 @@ class QuizzesController < ApplicationController
 
     respond_to do |format|
       if @quiz.save
-        format.html { redirect_to @quiz, notice: "Quiz was successfully created." }
+        format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }
         format.json { render :show, status: :created, location: @quiz }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class QuizzesController < ApplicationController
   def update
     respond_to do |format|
       if @quiz.update(quiz_params)
-        format.html { redirect_to @quiz, notice: "Quiz was successfully updated." }
+        format.html { redirect_to @quiz, notice: 'Quiz was successfully updated.' }
         format.json { render :show, status: :ok, location: @quiz }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +51,20 @@ class QuizzesController < ApplicationController
   def destroy
     @quiz.destroy
     respond_to do |format|
-      format.html { redirect_to quizzes_url, notice: "Quiz was successfully destroyed." }
+      format.html { redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_quiz
-      @quiz = Quiz.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def quiz_params
-      params.require(:quiz).permit(:title, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_quiz
+    @quiz = Quiz.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def quiz_params
+    params.require(:quiz).permit(:title, :description)
+  end
 end

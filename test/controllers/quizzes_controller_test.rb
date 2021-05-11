@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class QuizzesControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +7,17 @@ class QuizzesControllerTest < ActionDispatch::IntegrationTest
     @quiz = quizzes(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get quizzes_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_quiz_url
     assert_response :success
   end
 
-  test "should create quiz" do
+  test 'should create quiz' do
     assert_difference('Quiz.count') do
       post quizzes_url, params: { quiz: { description: @quiz.description, title: @quiz.title } }
     end
@@ -23,22 +25,22 @@ class QuizzesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to quiz_url(Quiz.last)
   end
 
-  test "should show quiz" do
+  test 'should show quiz' do
     get quiz_url(@quiz)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_quiz_url(@quiz)
     assert_response :success
   end
 
-  test "should update quiz" do
+  test 'should update quiz' do
     patch quiz_url(@quiz), params: { quiz: { description: @quiz.description, title: @quiz.title } }
     assert_redirected_to quiz_url(@quiz)
   end
 
-  test "should destroy quiz" do
+  test 'should destroy quiz' do
     assert_difference('Quiz.count', -1) do
       delete quiz_url(@quiz)
     end
