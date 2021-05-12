@@ -48,10 +48,6 @@ p#alert, p.text_danger {
     font-size: 16px;
 }
 
-.correct_answer {
-    color: green;
-}
-
 ol.alphabet {
     list-style-type: upper-alpha;
 }

@@ -10,8 +10,8 @@
     <li><%= question.content %>
       <ol class="alphabet">
         <% question.answers.each do |answer| %>
-          <% if policy(@quiz).view_answers? && answer.correct %>
-            <strong><li class="correct_answer"><%= "#{answer.option} (Correct)" %></li></strong>
+          <% if answer.correct %>
+            <li class="correct_answer"><%= answer.option %></li>
           <% else %>
             <li><%= answer.option %></li>
           <% end %>
@@ -21,4 +21,16 @@
     <br>
   <% end %>
 </ol>
-   
+
+<% if policy(@quiz).view_answers? %>
+  <button type="button" onclick="showCorrect()">Show Correct Answers</button>
+<% end %>
+
+<script>
+  function showCorrect() {
+    var options = document.getElementsByClassName("correct_answer");
+    for(var i=0; i<options.length; i++) {
+      options[i].style.color = "green";
+    }
+  }
+</script>
