@@ -8,19 +8,21 @@ class QuizPolicy < ApplicationPolicy
     user.present?
   end
 
-  def edit?
-    user.present?
-  end
+  delegate :edit?, to: :user
 
   def create?
-    user.present?
+    user.edit?
   end
 
   def update?
-    user.present?
+    user.edit?
   end
 
   def destroy?
-    user.present?
+    user.edit?
+  end
+
+  def view_answers?
+    user.edit? or user.view?
   end
 end

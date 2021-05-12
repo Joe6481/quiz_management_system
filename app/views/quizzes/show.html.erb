@@ -1,15 +1,22 @@
-<%= link_to 'Edit Quiz', edit_quiz_path(@quiz), class: "button edit small" %> 
+<% if policy(@quiz).edit? %>
+  <%= link_to 'Edit Quiz', edit_quiz_path(@quiz), class: "button edit small" %> 
+<% end %>
+
 <h2><%= @quiz.title %></h2>
 <h3><%= "Description: #{@quiz.description}" %></h3>
 
 <ol>
   <% @quiz.questions.each do |question| %>
     <li><%= question.content %>
-      <ol class="alphabet">
-        <% question.answers.each do |answer| %>
-            <li><%= answer.option %></li>
-        <% end %>  
-      </ol>
+      
+      <% if policy(@quiz).view_answers? %>
+        <ol class="alphabet">
+          <% question.answers.each do |answer| %>
+              <li><%= answer.option %></li>
+          <% end %>  
+        </ol>
+      <% end %>
+
     </li>
     <br>
   <% end %>

@@ -6,9 +6,13 @@
       <thead>
         <tr>
           <th>Date Created</th>
-          <th>Title</th>
+          <th>Quiz Title</th>
           <th>Description</th>
-          <th colspan="3"></th>
+          <% if policy(@quiz).edit? %>
+            <th colspan="3"></th>
+          <% else %>
+            <th colspan="1"></th>
+          <% end %>
         </tr>
       </thead>
 
@@ -19,18 +23,31 @@
             <td class="title"><%= quiz.title %></td>
             <td class="desc"><%= quiz.description %></td>
             <td><%= link_to "Show", quiz_path(quiz), class: "button show" %></td>
-            <td><%= link_to "Edit", edit_quiz_path(quiz), class: "button edit" %></td>
-            <td><%= link_to "Delete", quiz, method: :delete, data: { confirm: "Are you sure you want to delete #{quiz.title}?" }, class: "button destroy" %></td>
+            <% if policy(quiz).edit? %>
+              <td><%= link_to 'Edit', edit_quiz_path(quiz), class: "button edit" %></td>            
+            <% end %>
+            <% if policy(quiz).destroy? %>
+                <td><%= link_to 'Delete', quiz, method: :delete, data: { confirm: 'Are you sure you want to delete this quiz?' }, class: "button destroy" %></td>
+            <% end %>
+
+
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-  <div class="column right">
-    <h2>Create A New Quiz</h2>
-    <%= render 'form', quiz: @quiz %>
-  </div>
+  
+  <% if policy(@quiz).new? %>
+    <div class="column right">
+      <h2>Create A New Quiz</h2>
+      <%= render 'form', quiz: @quiz %>
+    </div>
+  <% end %>
 </div>
+
+
+  
+
 
      <!-- <p>Pencil &#x270E;</p>
       <p>Cross &#x2716;</p>

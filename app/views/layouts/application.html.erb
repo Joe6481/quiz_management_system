@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QuizManagementSystem</title>
+    <title>Quiz Management Site</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,8 +17,11 @@
     <div class="topnav">
       <% if user_signed_in? %>
         <%= link_to "Home", quizzes_path %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        
+        <h3 id="hello_user"><%= "Hello, #{current_user.name}! (Role: #{current_user.role.capitalize})" %></h3>
       <% else %>
-        <a href="#"></a> <!-- Provides a blank navbar -->
+        <h2 id="sign_in_message">Welcome to the Quiz Management Site, from WebbiSkools Ltd. Please log in below<h2>
       <% end %>
     </div>
        

@@ -2,17 +2,19 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :username,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "username" } %>
-    <%= f.input :password,
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <%= f.input :username, required: true, autofocus: true, input_html: { autocomplete: "username" } %>
+    <br>
+    <%= f.input :password, required: true, input_html: { autocomplete: "current-password" } %>
+    <br>
+    <%= f.label "Remember Me?" do %>
+      Remember Me?
+      <%= f.check_box :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <% end %>
   </div>
 
+  <br>
+
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "submit" %>
   </div>
 <% end %>
