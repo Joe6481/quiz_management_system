@@ -8,16 +8,17 @@
 <ol>
   <% @quiz.questions.each do |question| %>
     <li><%= question.content %>
-      
-      <% if policy(@quiz).view_answers? %>
-        <ol class="alphabet">
-          <% question.answers.each do |answer| %>
-              <li><%= answer.option %></li>
-          <% end %>  
-        </ol>
-      <% end %>
-
+      <ol class="alphabet">
+        <% question.answers.each do |answer| %>
+          <% if policy(@quiz).view_answers? && answer.correct %>
+            <strong><li class="correct_answer"><%= "#{answer.option} (Correct)" %></li></strong>
+          <% else %>
+            <li><%= answer.option %></li>
+          <% end %>
+        <% end %>  
+      </ol>
     </li>
     <br>
   <% end %>
 </ol>
+   
