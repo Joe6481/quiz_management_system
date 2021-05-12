@@ -22,9 +22,7 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    flash[:alert] =
-      "You are not authorized to perform this action.
-        Please speak to your supervisior about upgrading your account role."
+    flash[:alert] = "You are not authorized to perform this action"
     redirect_to(request.referer || quizzes_path)
   end
 end

@@ -1,6 +1,9 @@
-<div class="questions">
-  <strong><%= f.input :content, label: "Question #{q_no}" %></strong>
-  <div class="answers">
+<div class="question_fields">
+  <div class="create_form_input_question">
+    <strong><%= f.input :content, label: "Question #{q_no}" %></strong>
+  </div>
+
+  <div class="answer_fields">
     <p>Answers
       <%= f.simple_fields_for :answers do |a| %>
         <%= render 'answer_fields', f: a %>

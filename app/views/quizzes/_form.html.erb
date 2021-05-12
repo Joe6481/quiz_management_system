@@ -5,10 +5,13 @@
     <%end%>
   <%end%>
 
-  <strong>
-    <%= f.input :title, label: "Title" %>
-    <%= f.input :description, label: "Description" %>
-  </strong>
+  <div class="form create_form_input_quiz">
+    <strong>
+      <%= f.input :title, label: "Title" %>
+      <%= f.input :description, label: "Description", input_html: { cols: 50, rows: 3 } %> 
+      
+    </strong>
+  </div>
 
   <% q_no = 0 %> <!-- Defines a variable used to number questions. Used in question fields partial -->
 

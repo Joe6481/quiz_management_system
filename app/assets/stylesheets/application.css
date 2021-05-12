@@ -19,11 +19,20 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h2#sign_in_message {
+#sign_in_message {
     text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    color: #6013efe1;
 }
 
-h3#hello_user {
+#log_in_below {
+    text-align: center;
+    padding-bottom: 20px;
+    color: #6013efe1;
+}
+
+#hello_user {
     color: white;
     float: right;
     padding-right: 20px;
@@ -101,6 +110,10 @@ body {
     background-color: darkgrey;
 }
 
+.column.half {
+    width: 50%;
+}
+
 .section:after {
     content: "";
     display: table;
@@ -153,12 +166,24 @@ td.desc {
     width: 38%;
 }
 
-.answers {
+.answer_fields {
     padding-left: 40px;
 }
 
-.answer_input {
-    float:left
+.log_in_form_inputs input {
+    padding: 10px 10px;
+    display:block;
+    width: 25%;
+}
+
+.form.create_form_input_quiz input, .create_form_input_question input {
+    width: 75%;
+    padding: 5px 5px;
+}
+
+.create_form_input_answer input {
+    float:left;
+    width: 50%;
 }
 
 .button {
