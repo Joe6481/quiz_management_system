@@ -178,6 +178,10 @@ td.desc {
     padding-left: 40px;
 }
 
+.answer_checkbox {
+    float: left;
+}
+
 .log_in_form_inputs input {
     padding: 10px 10px;
     display:block;
@@ -213,6 +217,12 @@ td.desc {
     cursor: pointer;
     text-decoration: none;
 }
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
   
 .button.show {
     border: 2px solid #02a4da;
@@ -245,10 +255,22 @@ td.desc {
     background-color: #6013efe1;
     color: white;
     border: 1px solid black;
+    height: 50px;
+    width: 140px;
+    padding: none;
+    text-align: center; 
+    line-height: center;
 }
   
-.button.submit:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+.button.add {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 140px;
+    padding: none;
+    text-align: center; 
+    line-height: center;
 }
 
 .button.edit.small {
@@ -258,14 +280,19 @@ td.desc {
     padding: 5px 10px;
 }
   
-.button.destroy.small {
+.button.destroy.small, .button.destroy.tiny {
     background-color: #f44336;
     color: white;
     border: 1px solid black;
     padding: 5px 5px;
 }
-  
-.button.edit.small:hover, .button.destroy.small:hover {
+
+.button.destroy.tiny {
+    padding: 2px 2px;
+    float: left;
+}
+
+.button.submit:hover, .button.add.small:hover, .button.edit.small:hover, .button.destroy.small:hover, .button.destroy.tiny:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);  
 }
 

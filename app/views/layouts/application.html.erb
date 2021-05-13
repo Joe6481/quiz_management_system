@@ -36,12 +36,12 @@
     </div>
 
     <script>
-      function showCorrect() {
-        var options = document.getElementsByClassName("correct_answer");
-        for(var i=0; i<options.length; i++) {
-          options[i].style.color = "green";
+      $(".add_fields[data-association='answer']").on("click", function (event) {
+        var noAnswers = $(this).parent().parent().children("label").length; /* Counts no. labels in the parent div */
+        if (noAnswers >= 4) {
+          $(this).addClass("disabled") /* Adds CSS 'disabled' class to button */
         }
-      }
-    </script>
+      })
+    </script>  
   </body>
 </html>
