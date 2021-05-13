@@ -65,7 +65,7 @@ class QuizzesController < ApplicationController
   def generate_quesitons
     3.times do
       question = @quiz.questions.build
-      3.times do
+      4.times do
         question.answers.build
       end
     end

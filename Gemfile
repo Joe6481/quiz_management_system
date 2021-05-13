@@ -30,6 +30,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"  
   gem "rubocop-rails", require: false
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not mandatory, but highly recommended
+  gem 'database_cleaner'
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
