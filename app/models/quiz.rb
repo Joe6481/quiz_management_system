@@ -3,7 +3,7 @@
 class Quiz < ApplicationRecord
   has_many :questions
 
-  accepts_nested_attributes_for :questions, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
   validates :title, presence: true
 end

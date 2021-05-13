@@ -52,6 +52,14 @@ ol.alphabet {
     list-style-type: upper-alpha;
 }
 
+.question_data {
+    font-size: 16px;
+}
+
+.answer_data {
+    font-size: 14px;
+}
+
 body {
     margin: 0;
 }
@@ -176,9 +184,15 @@ td.desc {
     width: 25%;
 }
 
-.form.create_form_input_quiz input, .create_form_input_question input {
+.form.create_form_input_quiz input {
     width: 75%;
     padding: 5px 5px;
+}
+
+.create_form_input_question input {
+    width: 65%;
+    padding: 5px 5px;
+    float:left;
 }
 
 .create_form_input_answer input {
@@ -244,6 +258,20 @@ td.desc {
     padding: 5px 10px;
 }
   
-.button.edit.small:hover {
+.button.destroy.small {
+    background-color: #f44336;
+    color: white;
+    border: 1px solid black;
+    padding: 5px 5px;
+}
+  
+.button.edit.small:hover, .button.destroy.small:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);  
+}
+
+.button.answer {
+    background-color: #02a4da;
+    color: white;
+    border: 1px solid black;
+    padding: 2px;
 }

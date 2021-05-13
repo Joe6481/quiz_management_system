@@ -34,5 +34,14 @@
       <h3>Quiz Management Site</h3>
       <h4>&#169; WebbiSkools Ltd, 2021</h4>
     </div>
+
+    <script>
+      function showCorrect() {
+        var options = document.getElementsByClassName("correct_answer");
+        for(var i=0; i<options.length; i++) {
+          options[i].style.color = "green";
+        }
+      }
+    </script>
   </body>
 </html>
