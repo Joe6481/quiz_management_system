@@ -1,8 +1,10 @@
-Given('I am not logged in') do
+# frozen_string_literal: true
+
+Given("I am not logged in") do
   visit "/"
 end
 
-When('I log into an existing user') do
+When("I log into an existing user") do
   @user = FactoryBot.create(:user)
 
   fill_in("user[username]", with: @user.username)
@@ -11,21 +13,21 @@ When('I log into an existing user') do
   visit "/"
 end
 
-Then('I see that I am logged in') do
+Then("I see that I am logged in") do
   expect(page).to have_content("Signed in successfully.")
 end
 
-When('I log in with invalid credentials') do
+When("I log in with invalid credentials") do
   fill_in("user[username]", with: "Bad-user")
   fill_in("user[password]", with: "Bad-password")
   click_on "Submit"
 end
 
-Then('I see that my login failed') do
+Then("I see that my login failed") do
   expect(page).to have_content("Invalid Username or password.")
 end
 
-Given('I am logged in') do
+Given("I am logged in") do
   @user = FactoryBot.create(:user)
   fill_in("user[username]", with: @user.username)
   fill_in("user[password]", with: @user.password)
@@ -33,27 +35,13 @@ Given('I am logged in') do
   visit "/"
 end
 
-When('I logout') do
+When("I logout") do
   click_on "Log out"
 end
 
-Then('I see that I am logged out') do
+Then("I see that I am logged out") do
   expect(page).to have_content("Please log in below")
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Given("I am logged into a user") do
   @user = create(:user)

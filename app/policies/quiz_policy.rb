@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class QuizPolicy < ApplicationPolicy
   def index?
     user.present?

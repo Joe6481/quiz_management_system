@@ -26,7 +26,6 @@ AllCops:
   - spec/jobs/application_job_spec.rb
   - script/data_migrations/*
 
-
 Layout/EmptyLineAfterMagicComment:
   Enabled: false
 Layout/FirstArgumentIndentation:

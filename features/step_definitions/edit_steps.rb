@@ -1,71 +1,73 @@
-When('I create a new quiz') do
+# frozen_string_literal: true
+
+When("I create a new quiz") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I see the quiz') do
+Then("I see the quiz") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When('I edit the question') do
+When("I edit the question") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I no longer see the old question') do
+Then("I no longer see the old question") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I see the edited question') do
+Then("I see the edited question") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given('The quiz form has {int} question fields') do |int|
-# Given('The quiz form has {float} question fields') do |float|
+Given("The quiz form has {int} question fields") do |_int|
+  # Given('The quiz form has {float} question fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I see another question field') do
+Then("I see another question field") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given('The form has a question field filled') do
+Given("The form has a question field filled") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I do not see the question') do
+Then("I do not see the question") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I no longer see the question') do
+Then("I no longer see the question") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When('I edit the answer') do
+When("I edit the answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I no longer see the old answer') do
+Then("I no longer see the old answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I see the edited answer') do
+Then("I see the edited answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given('The question form has {int} answer fields') do |int|
-# Given('The question form has {float} answer fields') do |float|
+Given("The question form has {int} answer fields") do |_int|
+  # Given('The question form has {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I see another answer field') do
+Then("I see another answer field") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then('I see {int} answer fields') do |int|
-# Then('I see {float} answer fields') do |float|
+Then("I see {int} answer fields") do |_int|
+  # Then('I see {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given('The form has {int} answer fields') do |int|
-# Given('The form has {float} answer fields') do |float|
+Given("The form has {int} answer fields") do |_int|
+  # Given('The form has {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
