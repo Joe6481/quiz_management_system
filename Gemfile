@@ -16,6 +16,8 @@ gem "bootsnap", ">= 1.4.2", require: false
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails"
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 group :development do
@@ -33,7 +35,7 @@ group :test do
   gem 'cucumber-rails', require: false
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
-  gem 'rspec'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]

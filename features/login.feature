@@ -11,6 +11,6 @@ Feature: Login
     Then I see that my login failed
 
   Scenario: Logging out
-    Given I log into an existing user
+    Given I am logged in
     When I logout
     Then I see that I am logged out
