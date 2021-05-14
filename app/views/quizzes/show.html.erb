@@ -6,25 +6,33 @@
 <h2><%= "Description: #{@quiz.description}" %></h2>
 <br>
 
-<ol>
-  <% @quiz.questions.each do |question| %>
-    <li class="question_data"><%= question.content %>
-      <% if policy(@quiz).view_answers? %>
-        <span style="padding-left: 5px">
-        <button type="button" onclick="showCorrect()" class="button answer">Answer</button>
-      <% end %>
-      <ol class="alphabet">
-        <% question.answers.each do |answer| %>
-          <div class="answer_data">
-            <% if answer.correct %>
-              <li class="correct_answer"><%= answer.option %></li>
-            <% else %>
-              <li><%= answer.option %></li>
-            <% end %>
-          </div>
-        <% end %>  
-      </ol>
-    </li>
-    <br>
-  <% end %>
-</ol>
+<div class="show_question_fields">
+  <ol>
+    <% @quiz.questions.each do |question| %>
+      <li class="question_data"><%= question.content %>
+        
+        <!-- Individual button -->
+
+        <div class = "show_answer_fields">
+          <ol class="alphabet">
+            <% question.answers.each do |answer| %>
+              <div class="answer_data">
+                <% if answer.correct %>
+                  <li class="correct_answer"><%= answer.option %></li>
+                <% else %>
+                  <li><%= answer.option %></li>
+                <% end %>
+              </div>
+            <% end %>  
+          </ol>
+        </div>
+      </li>
+      <br>
+    <% end %>
+  </ol>
+</div>
+
+<% if policy(@quiz).view_answers? %>
+  <span style="padding-left: 5px"></span>
+  <button onclick="showCorrect()" class="button answer" id=<%#question.id %> data-association="show_answer">Reveal Answers</button>
+<% end %>

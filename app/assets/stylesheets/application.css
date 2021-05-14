@@ -289,7 +289,6 @@ td.desc {
 
 .button.destroy.tiny {
     padding: 2px 2px;
-    float: left;
 }
 
 .button.submit:hover, .button.add.small:hover, .button.edit.small:hover, .button.destroy.small:hover, .button.destroy.tiny:hover {
@@ -300,5 +299,5 @@ td.desc {
     background-color: #02a4da;
     color: white;
     border: 1px solid black;
-    padding: 2px;
+    padding: 5px, 10px;
 }

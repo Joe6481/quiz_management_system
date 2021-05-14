@@ -42,6 +42,16 @@
           $(this).addClass("disabled") /* Adds CSS 'disabled' class to button */
         }
       })
+
+      function showCorrect() {
+        var options = document.getElementsByClassName("correct_answer");
+        for(var i=0; i<options.length; i++) {
+          options[i].style.color = "green";
+        
+        /* $(".answer[data-association='show_answer']").on("click", function (event) {
+          console.log($(this) );     */    
+        }
+      }
     </script>  
   </body>
 </html>
