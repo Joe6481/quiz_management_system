@@ -118,10 +118,6 @@ body {
     background-color: darkgrey;
 }
 
-.column.half {
-    width: 50%;
-}
-
 .section:after {
     content: "";
     display: table;
