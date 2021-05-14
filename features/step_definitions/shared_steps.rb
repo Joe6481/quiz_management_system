@@ -1,37 +1,48 @@
 # frozen_string_literal: true
 
-Given("I am logged into an user in the {string} role") do |role|
-  @user = FactoryBot.create(:user, role: role)
-  fill_in("user_username", with: @user.username)
-  fill_in("user[password]", with: @user.password)
-  click_on "Submit"
-  visit "/"
-end
-
-Given("I am logged into an user with the {string} role") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Given("There are quizzes in the database") do
-  pending # Write code here that turns the phrase above into concrete actions
+  #@quiz = FactoryBot.create(:quiz)
+
+  fill_in("quiz_title", with: "Test Title")
+  fill_in("quiz_description", with: "Test Description")
+  fill_in("quiz_questions_attributes_0_content", with: "Test Question 1")
+  fill_in("quiz_questions_attributes_0_answers_attributes_0_option", with: "Test Question 1 Answer 1")
+  check("quiz_questions_attributes_0_answers_attributes_0_correct")
+  fill_in("quiz_questions_attributes_0_answers_attributes_1_option", with: "Test Question 1 Answer 2")
+  fill_in("quiz_questions_attributes_0_answers_attributes_2_option", with: "Test Question 1 Answer 3")
+
+  fill_in("quiz_questions_attributes_0_content", with: "Test Question 2")
+  fill_in("quiz_questions_attributes_1_answers_attributes_0_option", with: "Test Question 2 Answer 1")
+  check("quiz_questions_attributes_1_answers_attributes_0_correct")
+  fill_in("quiz_questions_attributes_1_answers_attributes_1_option", with: "Test Question 2 Answer 2")
+  fill_in("quiz_questions_attributes_1_answers_attributes_2_option", with: "Test Question 2 Answer 3")
+  
+  fill_in("quiz_questions_attributes_0_content", with: "Test Question 3")
+  fill_in("quiz_questions_attributes_2_answers_attributes_0_option", with: "Test Question 3 Answer 1")
+  check("quiz_questions_attributes_2_answers_attributes_0_correct")
+  fill_in("quiz_questions_attributes_2_answers_attributes_1_option", with: "Test Question 3 Answer 2")
+  fill_in("quiz_questions_attributes_2_answers_attributes_2_option", with: "Test Question 3 Answer 3")
+
+  click_on "Create Quiz"
 end
 
-When("I click on {string}") do |_string|
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click on {string}") do |string|
+  click_on string
 end
 
 Then("I see the existing quizzes") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Test Title")
+  expect(page).to have_content("Test Description")
 end
 
 Then("I see the questions") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Test Question 1")
+  expect(page).to have_content("Test Question 2")
+  expect(page).to have_content("Test Question 3")
 end
 
 Then("I see the answer options") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I see the correct answer") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Test Question 1 Answer 3")
+  expect(page).to have_content("Test Question 2 Answer 2")
+  expect(page).to have_content("Test Question 3 Answer 1")
 end

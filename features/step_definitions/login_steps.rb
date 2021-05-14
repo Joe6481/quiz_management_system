@@ -4,13 +4,14 @@ Given("I am not logged in") do
   visit "/"
 end
 
-#Given("I am logged into an user in the {string} role") do |role|
-  #@user = FactoryBot.create(:user, role: role)
-  #fill_in("user[password]", with: @user.password)
-  #fill_in("user_username", with: @user.username)
-  #click_on "Submit"
-  #visit "/"
-#end
+Given("I am logged into an user with the {string} role") do |role|
+  visit "/"
+  @user = FactoryBot.create(:user, role: role)
+  fill_in("user[username]", with: @user.username)
+  fill_in("user[password]", with: @user.password)
+  click_on "Log in"
+  visit "/"
+end
 
 When("I log into an existing user") do
   @user = FactoryBot.create(:user, role: "edit")
