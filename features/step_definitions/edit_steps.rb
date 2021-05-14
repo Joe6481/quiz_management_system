@@ -20,7 +20,7 @@ Then("I see the edited question") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given("The quiz form has {int} question fields") do |_int|
+Given("The quiz form has {int} question fields") do |int|
   # Given('The quiz form has {float} question fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
@@ -53,7 +53,7 @@ Then("I see the edited answer") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given("The question form has {int} answer fields") do |_int|
+Given("The question form has {int} answer fields") do |int|
   # Given('The question form has {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
@@ -62,12 +62,12 @@ Then("I see another answer field") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then("I see {int} answer fields") do |_int|
+Then("I see {int} answer fields") do |int|
   # Then('I see {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given("The form has {int} answer fields") do |_int|
+Given("The form has {int} answer fields") do |int|
   # Given('The form has {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
