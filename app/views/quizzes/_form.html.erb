@@ -8,26 +8,21 @@
   <div class="form create_form_input_quiz">
     <strong>
       <%= f.input :title, label: "Title" %>
-      <%= f.input :description, label: "Description", input_html: { cols: 50, rows: 3 } %> 
-      
+      <%= f.input :description, label: "Description", input_html: { cols: 50, rows: 3 } %>
     </strong>
   </div>
-
   <br>
+
   <%= f.simple_fields_for :questions do |q| %>
-    <%= render 'question_fields', f: q %>      
-    
+    <%= render 'question_fields', f: q %>
     <br>
   <% end %>
-
 
   <div class='links'>
     <%= link_to_add_association 'Add Question', f, :questions, class: "button add" %>
   </div>
-
-  <br>  
-  <%= f.submit class: "button submit" %>
   
+  <br>
+  <%= f.submit class: "button submit" %>
 <% end %>
-
 <br>

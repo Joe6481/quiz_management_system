@@ -4,7 +4,6 @@
     <title>Quiz Management Site</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,28 +12,23 @@
     <div class="header">
       <h1>WebbiSkools Quiz Management</h1>
     </div>
-          
     <div class="topnav">
       <% if user_signed_in? %>
         <%= link_to "Home", quizzes_path %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        
         <h3 id="hello_user"><%= "Hello, #{current_user.name}! (Role: #{current_user.role.capitalize})" %></h3>
       <% end %>
     </div>
-       
     <div class="content">
       <p id="notice"><%= notice %></p>
       <p id="alert"><%= alert %></p>
-      
       <%= yield %>
     </div>
-
     <div class="footer">
       <h3>Quiz Management Site</h3>
       <h4>&#169; WebbiSkools Ltd, 2021</h4>
     </div>
-
+    
     <script>
       $(".add_fields[data-association='answer']").on("click", function (event) {
         var noAnswers = $(this).parent().parent().children("label").length; /* Counts no. labels in the parent div */
@@ -42,16 +36,16 @@
           $(this).addClass("disabled") /* Adds CSS 'disabled' class to button */
         }
       })
-
+      
       function showCorrect() {
         var options = document.getElementsByClassName("correct_answer");
         for(var i=0; i<options.length; i++) {
           options[i].style.color = "green";
-        
+      
         /* $(".answer[data-association='show_answer']").on("click", function (event) {
-          console.log($(this) );     */    
+          console.log($(this) );     */
         }
       }
-    </script>  
+    </script>
   </body>
 </html>

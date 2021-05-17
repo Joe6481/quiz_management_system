@@ -1,18 +1,14 @@
 <% if policy(@quiz).edit? %>
-  <%= link_to 'Edit Quiz', edit_quiz_path(@quiz), class: "button edit small" %> 
+  <%= link_to 'Edit Quiz', edit_quiz_path(@quiz), class: "button edit small" %>
 <% end %>
 
 <h1><%= @quiz.title %></h1>
 <h2><%= "Description: #{@quiz.description}" %></h2>
 <br>
-
 <div class="show_question_fields">
   <ol>
     <% @quiz.questions.each do |question| %>
       <li class="question_data"><%= question.content %>
-        
-        <!-- Individual button -->
-
         <div class = "show_answer_fields">
           <ol class="alphabet">
             <% question.answers.each do |answer| %>
@@ -23,7 +19,7 @@
                   <li><%= answer.option %></li>
                 <% end %>
               </div>
-            <% end %>  
+            <% end %>
           </ol>
         </div>
       </li>
@@ -34,5 +30,5 @@
 
 <% if policy(@quiz).view_answers? %>
   <span style="padding-left: 5px"></span>
-  <button onclick="showCorrect()" class="button answer" id=<%#question.id %> data-association="show_answer">Reveal Answers</button>
+  <button onclick="showCorrect()" class="button answer">Reveal Answers</button>
 <% end %>

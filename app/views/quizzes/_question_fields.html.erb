@@ -5,14 +5,12 @@
       <span style="padding-left:10px">
       <%= link_to_remove_association "Remove", f, class: "button destroy small" %>
     </div>
-
     <div class="answer_fields">
       <p>Answers
         <%= f.simple_fields_for :answers do |a| %>
           <%= render 'answer_fields', f: a %>
         <% end %>
       </p>
-
       <div class='links'>
         <%= link_to_add_association 'Add Option', f, :answers, data: {question_index: f.object_name[27..-2]}, class: "button add" %>
           <!-- Gets index of question in the quiz -->

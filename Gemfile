@@ -44,6 +44,7 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 gem "cocoon"
 gem "devise"
+gem "htmlbeautifier"
 gem "jquery-rails"
 gem "pry-rails"
 gem "pundit"

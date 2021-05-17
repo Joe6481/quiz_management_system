@@ -1,7 +1,6 @@
 <div class="section">
   <div class="column left">
     <h2>Quizzes</h2>
-
     <table class="quizzes">
       <thead>
         <tr>
@@ -24,13 +23,11 @@
             <td class="desc"><%= quiz.description %></td>
             <td><%= link_to "Show", quiz_path(quiz), class: "button show" %></td>
             <% if policy(quiz).edit? %>
-              <td><%= link_to 'Edit', edit_quiz_path(quiz), class: "button edit" %></td>            
+              <td><%= link_to 'Edit', edit_quiz_path(quiz), class: "button edit" %></td>
             <% end %>
             <% if policy(quiz).destroy? %>
-                <td><%= link_to 'Delete', quiz, method: :delete, data: { confirm: 'Are you sure you want to delete this quiz?' }, class: "button destroy" %></td>
+              <td><%= link_to 'Delete', quiz, method: :delete, data: { confirm: 'Are you sure you want to delete this quiz?' }, class: "button destroy" %></td>
             <% end %>
-
-
           </tr>
         <% end %>
       </tbody>
@@ -44,11 +41,3 @@
     </div>
   <% end %>
 </div>
-
-
-  
-
-
-     <!-- <p>Pencil &#x270E;</p>
-      <p>Cross &#x2716;</p>
-      <p>Show ? &#x2630;</p> -->
