@@ -1,22 +1,19 @@
 Feature: Role: edit
 
   Background:
-    Given I am logged into an user with the 'edit' role
+    Given There are quizzes in the database
+    And I am logged into an user with the 'edit' role
 
   Scenario: Viewing existing messages
-    Given There are quizzes in the database
     When  I click on 'Home'
     Then  I see the existing quizzes
 
   Scenario: Showing the quiz
-    Given There are quizzes in the database
     # issue here \/
     When  I click on show
-    Then  I see the questions
-    Then  I see the answer options
+    Then  I see the questions and answer options
 
   Scenario: See question’s correct answer
-	  Given There are quizzes in the database
     When  I click on 'show'
     And   I click on 'answers'
     Then  I see the correct answers
@@ -26,7 +23,6 @@ Feature: Role: edit
     Then  I see the quiz
 
   Scenario: Edit question contents
-    Given There are quizzes in the database
     When  I click on 'edit'
     And   I edit the question contents
     Then  I no longer see the old question
@@ -49,7 +45,6 @@ Feature: Role: edit
     Then  I see 2 answer fields
 
   Scenario: Edit answer contents
-    Given There are quizzes in the database
     When  I click on 'edit'
     And   I edit the answer
     Then  I no longer see the old answer
