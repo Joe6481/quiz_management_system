@@ -34,3 +34,7 @@ Then("I see the quiz contents, questions and answer options") do
   expect(page).to have_content("Test Question Answer 2 (False)")
   expect(page).to have_content("Test Question Answer 3 (True)")
 end
+
+Then("I see the correct answers") do
+  expect(page).to have_css(".correct_answer") 
+end

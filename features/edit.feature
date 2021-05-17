@@ -7,15 +7,15 @@ Feature: Role: edit
   Scenario: Viewing existing messages
     When  I click on 'Home'
     Then  I see the existing quizzes
+    And I see a welcome message
 
   Scenario: Showing the quiz
-    # issue here \/
-    When  I click on show
-    Then  I see the questions and answer options
+    When  I click on 'Show'
+    Then  I see the quiz contents, questions and answer options
 
   Scenario: See question’s correct answer
-    When  I click on 'show'
-    And   I click on 'answers'
+    When  I click on 'Show'
+    And   I click on 'Reveal Answers'
     Then  I see the correct answers
 
   Scenario: Creating a new quiz	
@@ -23,34 +23,13 @@ Feature: Role: edit
     Then  I see the quiz
 
   Scenario: Edit question contents
-    When  I click on 'edit'
+    When  I click on 'Edit'
     And   I edit the question contents
     Then  I no longer see the old question
     Then  I see the edited question
 
-  Scenario: Add a new question field
-    # count number of fields ???
-    Given The quiz form has 3 question fields
-    When  I click on 'Add Question'
-    Then  I see another question field
-
-  Scenario: Limit number of answer fields to max 5
-    Given The question form has 5 answer fields
-    And   I click on 'add answer'
-    Then  I see 5 answer fields
-
-  Scenario: Remove a question field
-    Given The quiz form has 3 question fields
-    When  I click on 'Remove question'
-    Then  I see 2 answer fields
-
   Scenario: Edit answer contents
-    When  I click on 'edit'
+    When  I click on 'Edit'
     And   I edit the answer
     Then  I no longer see the old answer
     Then  I see the edited answer
-
-  Scenario: Add a new answer field
-    Given The question form has 4 answer fields
-    When  I click on 'add answer'
-    Then  I see another answer field

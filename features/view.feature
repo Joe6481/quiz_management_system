@@ -7,13 +7,13 @@ Feature: Role view
   Scenario: Viewing existing messages
     When  I click on 'Home'
     Then  I see the existing quizzes
+    And I see a welcome message
 
   Scenario: Showing the quiz
-    # issue here \/
-    When  I click on 'show'
-    Then  I see the questions and answer options
+    When  I click on 'Show'
+    Then  I see the quiz contents, questions and answer options
 
   Scenario: See question’s correct answer
-    When  I click on 'show'
-    And   I click on 'answers'
+    When  I click on 'Show'
+    And   I click on 'Reveal Answers'
     Then  I see the correct answers
