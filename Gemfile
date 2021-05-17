@@ -46,3 +46,6 @@ gem "jquery-rails"
 gem "pry-rails"
 gem "pundit"
 gem "simple_form"
+
+gem "cuprite"
+gem "capybara-screenshot"

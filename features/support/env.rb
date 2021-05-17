@@ -7,6 +7,8 @@
 # files.
 
 require "cucumber/rails"
+require "capybara/cuprite"
+require "capybara-screenshot/cucumber"
 
 # frozen_string_literal: true
 
@@ -39,6 +41,22 @@ begin
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
+
+Capybara.register_driver :cuprite do |app|
+  Capybara::Cuprite::Driver.new(app, headless: ENV["CUPRITE_HEADLESS"] != "false",
+                                     slowmo: ENV["CUPRITE_SLOWMO"]&.to_f,
+                                     js_errors: true,
+                                     window_size: [1600, 1200],
+                                     timeout: 30,
+                                     process_timeout: 60,
+                                     inspector: true)
+end
+Capybara.javascript_driver = :cuprite
+Capybara.disable_animation = true
+
+Capybara::Screenshot.register_driver(:cuprite) do |driver, path|
+  driver.render(path, full: true)
+  end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:

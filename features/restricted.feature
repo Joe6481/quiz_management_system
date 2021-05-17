@@ -7,9 +7,9 @@ Background:
   Scenario: Viewing existing messages
     When  I click on 'Home'
     Then  I see the existing quizzes
+    And I see a welcome message
 
   Scenario: Showing the quiz
-    # issue here \/
-    When  I click on 'show'
-    Then  I see the questions and answer options
+    When  I click on 'Show'
+    Then  I see the quiz contents, questions and answer options
     
