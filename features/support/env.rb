@@ -56,7 +56,7 @@ Capybara.disable_animation = true
 
 Capybara::Screenshot.register_driver(:cuprite) do |driver, path|
   driver.render(path, full: true)
-  end
+end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:

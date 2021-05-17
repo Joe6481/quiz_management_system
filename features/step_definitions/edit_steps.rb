@@ -14,7 +14,7 @@ When("I create a new quiz") do
   check("quiz_questions_attributes_1_answers_attributes_0_correct")
   fill_in("quiz_questions_attributes_1_answers_attributes_1_option", with: "Test Create Question 2 Answer 2")
   fill_in("quiz_questions_attributes_1_answers_attributes_2_option", with: "Test Create Question 2 Answer 3")
-  
+
   fill_in("quiz_questions_attributes_0_content", with: "Test Create Question 3")
   fill_in("quiz_questions_attributes_2_answers_attributes_0_option", with: "Test Create Question 3 Answer 1")
   check("quiz_questions_attributes_2_answers_attributes_0_correct")
@@ -48,7 +48,7 @@ Then("I see the edited question") do
   expect(page).to have_content("Test Edited Question 1")
 end
 
-Given("The quiz form has {int} question fields") do |int|
+Given("The quiz form has {int} question fields") do |_int|
   # Given('The quiz form has {float} question fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
@@ -75,14 +75,14 @@ When("I edit the answer") do
 end
 
 Then("I no longer see the old answer") do
-  expect(page).not_to have_content("Test Create Question 1 Answer 1")  
+  expect(page).not_to have_content("Test Create Question 1 Answer 1")
 end
 
 Then("I see the edited answer") do
   expect(page).to have_content("Test Edited Question 1 Answer 1")
 end
 
-Given("The question form has {int} answer fields") do |int|
+Given("The question form has {int} answer fields") do |_int|
   # Given('The question form has {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end
@@ -92,10 +92,10 @@ Then("I see another answer field") do
 end
 
 Then("I see {int} answer fields") do |int|
-  expect(page).to have_css("input", :count => int)
+  expect(page).to have_css("input", count: int)
 end
 
-Given("The form has {int} answer fields") do |int|
+Given("The form has {int} answer fields") do |_int|
   # Given('The form has {float} answer fields') do |float|
   pending # Write code here that turns the phrase above into concrete actions
 end

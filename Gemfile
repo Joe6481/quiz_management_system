@@ -29,13 +29,15 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "capybara-screenshot"
   gem "cucumber-rails", require: false
-  gem "rubocop-rails", require: false
-  gem "selenium-webdriver"
-  gem "webdrivers"
-  # database_cleaner is not mandatory, but highly recommended
+  gem "cuprite"
   gem "database_cleaner"
   gem "rspec-rails", "~> 3.0"
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
@@ -46,6 +48,3 @@ gem "jquery-rails"
 gem "pry-rails"
 gem "pundit"
 gem "simple_form"
-
-gem "cuprite"
-gem "capybara-screenshot"

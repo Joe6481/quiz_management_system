@@ -21,7 +21,7 @@ When("I log into an existing user") do
   visit "/"
 end
 
-When('I log in with invalid credentials') do
+When("I log in with invalid credentials") do
   fill_in("user_username", with: "Bad name")
   fill_in("user_password", with: "Bad pass")
   click_on "Log in"
@@ -31,10 +31,10 @@ Then("I see that I am logged in") do
   expect(page).to have_content("Log out")
 end
 
-Then('I see that I am logged out') do
+Then("I see that I am logged out") do
   expect(page).to have_content("Please log in below")
 end
 
 When("I log out") do
-  click_on 'Log out'
+  click_on "Log out"
 end

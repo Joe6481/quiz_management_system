@@ -2,15 +2,15 @@
 
 Given("There are quizzes in the database") do
   @quiz = Quiz.create(title: "Test Title", description: "Test Description")
-  
+
   @question = @quiz.questions.create(content: "Test Question")
 
   @question.answers.create([
-    { option: "dummy", correct: "true" },
-    { option: "Test Question Answer 1 (False)", correct: false },
-    { option: "Test Question Answer 2 (False)", correct: false },
-    { option: "Test Question Answer 3 (True)", correct: true }
-  ])
+                             {option: "dummy", correct: "true"},
+                             {option: "Test Question Answer 1 (False)", correct: false},
+                             {option: "Test Question Answer 2 (False)", correct: false},
+                             {option: "Test Question Answer 3 (True)", correct: true},
+                           ])
 end
 
 When("I click on {string}") do |string|
@@ -36,5 +36,5 @@ Then("I see the quiz contents, questions and answer options") do
 end
 
 Then("I see the correct answers") do
-  expect(page).to have_css(".correct_answer") 
+  expect(page).to have_css(".correct_answer")
 end
